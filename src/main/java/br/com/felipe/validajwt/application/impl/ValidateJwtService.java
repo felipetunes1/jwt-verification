@@ -54,6 +54,10 @@ public class ValidateJwtService implements ValidateJwtUseCase {
             logger.info("NAME_IS_BLANK");
             return ErrorList.NAME_IS_BLANK;
         }
+        if(name.length() > 256) {
+            logger.info("INVALID_NAME");
+            return ErrorList.INVALID_NAME;
+        }
         if(validateName.matcher(name).find()){
             logger.info("INVALID_NAME");
             return ErrorList.INVALID_NAME;
