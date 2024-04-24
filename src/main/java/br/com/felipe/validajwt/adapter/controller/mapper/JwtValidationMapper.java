@@ -78,6 +78,11 @@ public class JwtValidationMapper {
     private static ValidateJwtInput validateClaims(Map<String, Object> input) throws ValidateJwtHttpException {
         var errors = validateClaimsProperties(input);
 
+        if(!errors.isEmpty()) {
+            looger.error("errors was encountred");
+            throw ValidateJwtHttpException.build().addAll(errors);
+        }
+
         var name = (String) input.getOrDefault("Name", null);
         if(Objects.isNull(name)) {
             looger.info("name is null");
