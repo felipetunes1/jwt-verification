@@ -63,4 +63,11 @@ A interface `JwtValidatorOpenApi` define um contrato para validar tokens JWT.
 
 ---
 
-Este é apenas um exemplo de README.md. Você pode adicionar mais detalhes sobre os métodos, a lógica de funcionamento, as dependências e como usar essas classes em seu projeto específico.
+## CURL para Execução do Projeto
+
+```
+curl --location --request POST 'localhost:8080/v1/validate-jwt' \
+--header 'Content-Type: application/json' \
+--header 'token: eyJhbGciOiJzI1NiJ9.dfsdfsfryJSr2xrIjoiQWRtaW4iLCJTZrkIjoiNzg0MSIsIk5hbrUiOiJUb25pbmhvIEFyYXVqbyJ9.QY05fsdfsIjtrcJnP533kQNk8QXcaleJ1Q01jWY_ZzIZuAg' \
+--data-raw ''
+```
