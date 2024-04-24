@@ -1,6 +1,5 @@
 package br.com.felipe.validajwt.adapter.controller.impl;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,8 +12,11 @@ import br.com.felipe.validajwt.application.exceptions.ValidateTokenException;
 @RestController
 public class JwtValidatorController implements JwtValidatorOpenApi {
 
-    @Autowired
-    private ValidateJwtUseCase useCase;
+    private final ValidateJwtUseCase useCase;
+
+    public JwtValidatorController(ValidateJwtUseCase useCase) {
+        this.useCase = useCase;
+    }
 
     @Override
     public ResponseEntity<Void> validateJwt(String token) throws ValidateJwtHttpException {

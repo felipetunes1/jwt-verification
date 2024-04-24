@@ -30,4 +30,12 @@ public class ValidateJwtHttpException extends Exception {
         this.errors.addAll(errors);
         return this;
     }
+
+    public ErrorList getErrors() {
+        return errors;
+    } 
+
+    public String getError() {
+        return error;
+    } 
 }
